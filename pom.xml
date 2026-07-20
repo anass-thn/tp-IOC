@@ -14,6 +14,10 @@
     </properties>
 
     <dependencies>
-        <!-- Nous ajouterons les dépendances Spring plus tard -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.10</version>
+        </dependency>
     </dependencies>
 </project>

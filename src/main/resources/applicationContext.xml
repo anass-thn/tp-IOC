@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1. Instanciation du Bean dao -->
+    <bean id="dao" class="dao.DaoImpl" />
+
+    <!-- 2. Instanciation du Bean metier et injection du bean dao par le setter -->
+    <bean id="metier" class="metier.MetierImpl">
+        <!-- ref fait référence à l'id du bean à injecter -->
+        <property name="dao" ref="dao" />
+    </bean>
+
+</beans>
