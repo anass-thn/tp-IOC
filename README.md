@@ -14,6 +14,8 @@ Ce projet a pour but de comprendre et de mettre en œuvre le concept d'inversion
   - `pres.Pres1` (Classe) : Instanciation statique (avec `new`) et injection de dépendances manuelle (via le setter).
   - `pres.Pres2` (Classe) : Instanciation dynamique (avec chargement dynamique des classes et réflexivité) à partir du fichier `config.txt`.
   - `pres.PresAvecSpringXml` (Classe) : Chargement du contexte Spring à partir d'un fichier XML et récupération du bean métier.
+  - `pres.PresAvecSpringAnnotations` (Classe) : Chargement du contexte Spring en scannant les packages via les annotations.
+
 - **Fichiers de Configuration** :
   - `config.txt` : Contient les noms complets des classes concrètes à instancier (`dao.DaoImpl` et `metier.MetierImpl`).
   - `src/main/resources/applicationContext.xml` : Configuration XML pour déclarer les beans `dao` et `metier` et définir l'injection par setter.

@@ -1,9 +1,12 @@
 package metier;
 
 import dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service("metier")
 public class MetierImpl implements IMetier {
-    // Couplage faible : on dépend de l'interface IDao et non de la classe concrète DaoImpl
+    // Couplage faible
     private IDao dao;
 
     @Override
@@ -16,7 +19,8 @@ public class MetierImpl implements IMetier {
         return data * 11.5;
     }
 
-    // Setter pour injecter la dépendance
+    // Injection automatique via le setter
+    @Autowired
     public void setDao(IDao dao) {
         this.dao = dao;
     }
