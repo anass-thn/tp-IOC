@@ -3,13 +3,10 @@ package metier;
 import dao.IDao;
 import framework.annotations.MyAutowired;
 import framework.annotations.MyComponent;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @MyComponent
-@Service("metier")
-public class MetierImpl implements IMetier {
-    // Couplage faible
+public class MetierImpl2 implements IMetier {
+    @MyAutowired
     private IDao dao;
 
     @Override
@@ -18,13 +15,9 @@ public class MetierImpl implements IMetier {
             throw new IllegalStateException("L'objet DAO n'a pas été injecté !");
         }
         double data = dao.getValue();
-        // Simulation d'un calcul métier
-        return data * 11.5;
+        return data * 100;
     }
 
-    // Injection automatique via le setter (Spring et Custom Framework)
-    @MyAutowired
-    @Autowired
     public void setDao(IDao dao) {
         this.dao = dao;
     }

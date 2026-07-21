@@ -19,7 +19,10 @@ Ce projet a pour but de comprendre et de mettre en œuvre le concept d'inversion
 - **Fichiers de Configuration** :
   - `config.txt` : Contient les noms complets des classes concrètes à instancier (`dao.DaoImpl` et `metier.MetierImpl`).
   - `src/main/resources/applicationContext.xml` : Configuration XML pour déclarer les beans `dao` et `metier` et définir l'injection par setter.
-- **Mini-Framework IoC Sur Mesure** (`framework.annotations`) :
+- **Mini-Framework IoC Sur Mesure** (`framework`) :
   - `framework.annotations.MyComponent` (Annotation) : Marque une classe pour qu'elle soit instanciée et gérée par notre conteneur IoC.
   - `framework.annotations.MyAutowired` (Annotation) : Marque un attribut ou un setter pour demander l'injection automatique d'un composant.
+  - `framework.CustomApplicationContext` (Classe) : Conteneur IoC scannant les packages, instanciant les composants `@MyComponent` et réalisant l'injection de dépendances pour les éléments `@MyAutowired`.
+  - `pres.PresAvecCustomFramework` (Classe) : Test de notre propre conteneur IoC sans aucune dépendance externe.
+
 
